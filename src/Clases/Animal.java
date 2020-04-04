@@ -5,6 +5,8 @@
  */
 package Clases;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author raulpenate
@@ -15,6 +17,10 @@ public abstract class Animal {
     private String raza;
     private String naturaleza;
 
+    public void accion(){
+        JOptionPane.showMessageDialog(null, "El animal hace algo dependiendo sus características");
+    }
+    
     public String getNombre() {
         return nombre;
     }

@@ -5,12 +5,20 @@
  */
 package Clases;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author raulpenate
  */
 public class Ave extends Animal{
-    
+
+    @Override
+    public void accion() {
+        JOptionPane.showMessageDialog(null, "El ave vuela");
+    }
+       
+    //////////////////////////////////////////////////////////////////////
     @Override
     public void setNaturaleza(String naturaleza) {
         super.setNaturaleza(naturaleza); //To change body of generated methods, choose Tools | Templates.

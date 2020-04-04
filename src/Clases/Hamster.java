@@ -5,12 +5,19 @@
  */
 package Clases;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author raulpenate
  */
-public class Hamster extends Animal{
-    
+public class Hamster extends Animal {
+
+    @Override
+    public void accion() {
+        JOptionPane.showMessageDialog(null, "El hamster murde");
+    }
+
     @Override
     public void setNaturaleza(String naturaleza) {
         super.setNaturaleza(naturaleza); //To change body of generated methods, choose Tools | Templates.
@@ -50,6 +57,5 @@ public class Hamster extends Animal{
     public String getEspecie() {
         return super.getEspecie(); //To change body of generated methods, choose Tools | Templates.
     }
-    
-    
+
 }

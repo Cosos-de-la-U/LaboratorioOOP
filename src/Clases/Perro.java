@@ -5,11 +5,18 @@
  */
 package Clases;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author raulpenate
  */
-public class Perro extends Animal{
+public class Perro extends Animal {
+
+    @Override
+    public void accion() {
+        JOptionPane.showMessageDialog(null, "El perro ladra");
+    }
 
     @Override
     public void setNaturaleza(String naturaleza) {
@@ -40,7 +47,5 @@ public class Perro extends Animal{
     public String getRaza() {
         return super.getRaza(); //To change body of generated methods, choose Tools | Templates.
     }
-    
-    
-    
+
 }

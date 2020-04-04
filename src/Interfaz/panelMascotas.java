@@ -69,6 +69,7 @@ public class panelMascotas extends javax.swing.JFrame {
         btnAgregar = new javax.swing.JButton();
         cbNaturaleza = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
+        btnAcción = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jtblAnimales = new javax.swing.JTable();
@@ -110,6 +111,13 @@ public class panelMascotas extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
         jLabel4.setText("Naturaleza");
 
+        btnAcción.setText("Acción");
+        btnAcción.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAcciónActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -129,8 +137,10 @@ public class panelMascotas extends javax.swing.JFrame {
                     .addComponent(jLabel4)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(btnAgregar)))
-                .addContainerGap(14, Short.MAX_VALUE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnAgregar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnAcción, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -150,9 +160,11 @@ public class panelMascotas extends javax.swing.JFrame {
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(cbNaturaleza, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addGap(26, 26, 26)
                 .addComponent(btnAgregar)
-                .addGap(29, 29, 29))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnAcción)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Datos Mascotas"));
@@ -163,7 +175,7 @@ public class panelMascotas extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 552, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 554, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -341,6 +353,35 @@ public class panelMascotas extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnAgregarActionPerformed
 
+    private void btnAcciónActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAcciónActionPerformed
+        // TODO add your handling code here:
+        int selectedRowIndex = jtblAnimales.getSelectedRow();
+        int column = 1;
+        String tipoAnimal = jtblAnimales.getModel().getValueAt(selectedRowIndex, column) + "";
+        switch (tipoAnimal) {
+            case "Ave":
+                Ave oAve = new Ave();
+                oAve.accion();
+                break;
+            case "Gato":
+                Gato oGato = new Gato();
+                oGato.accion();
+                break;
+            case "Perro":
+                Perro oPerro = new Perro();
+                oPerro.accion();
+                break;
+            case "Hamster":
+                Hamster oHamster = new Hamster();
+                oHamster.accion();
+                break;
+            case "Pez":
+                Pez oPez = new Pez();
+                oPez.accion();
+                break;
+        }
+    }//GEN-LAST:event_btnAcciónActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -378,6 +419,7 @@ public class panelMascotas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAcción;
     private javax.swing.JButton btnAgregar;
     private javax.swing.JComboBox<String> cbEspecie;
     private javax.swing.JComboBox<String> cbNaturaleza;
